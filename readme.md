@@ -28,7 +28,13 @@ ExampleCorp,https://example.com,https://github.com/example/repo
 
 3. Install required dependencies:
 ```bash
+# Core dependencies
 pip install pandas beautifulsoup4 requests python-dotenv aiohttp asyncio
+
+# Autogen dependencies
+pip install -U "autogen-agentchat"
+pip install "autogen-ext[openai]"
+
 ```
 
 4. Run the analysis:
