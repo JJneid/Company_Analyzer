@@ -1,0 +1,116 @@
+Startup Analysis Report
+=====================
+
+Company: e2b
+============
+
+Technical Analysis
+------------------
+{
+  "repository_metrics": {
+    "stars": null,
+    "forks": null,
+    "open_issues": null,
+    "watchers": null,
+    "last_update": null,
+    "created_at": null
+  },
+  "development_activity": {
+    "recent_commits": 0,
+    "total_contributors": null,
+    "primary_language": null,
+    "all_languages": null
+  },
+  "community_health": {
+    "has_wiki": null,
+    "has_pages": null,
+    "has_projects": null,
+    "description": null
+  },
+  "changelog": {
+    "found": true,
+    "url": "https://e2b.dev/changelog",
+    "entries": [],
+    "update_frequency": 0,
+    "last_update": null
+  }
+}
+
+Market Analysis
+---------------
+{
+  "news_analysis": [],
+  "funding_data": {},
+  "market_presence": {
+    "recent_mentions": [
+      {
+        "title": "Open-source Code Interpreting for AI Apps \u2014 E2B",
+        "link": "https://e2b.dev/",
+        "snippet": "Issues are resolved in minutes.\u201d \u2014 Maciej Donajski, CTO. Finance. Data Processing. \u201cE2B allows us to quickly scale by providing a safe compute environment for\u00a0..."
+      },
+      {
+        "title": "Czech Startup E2B Raises $11.5M to Build Cloud Infrastructure for ...",
+        "link": "https://therecursive.com/czech-startup-e2b-raises-11-5m-to-build-cloud-infrastructure-for-ai-agents/",
+        "snippet": "Oct 18, 2024 ... Czech startup E2B raises $11.5M in seed funding to develop cloud infrastructure for AI agents, simplifying the development and testing of\u00a0..."
+      },
+      {
+        "title": "Czech startup E2B raises $11.5M for code interpretation in AI ...",
+        "link": "https://www.vestbee.com/blog/articles/e2-b-raises-11-5-m",
+        "snippet": "Oct 17, 2024 ... Czech startup E2B raises $11.5M for code ... Tallinn's B2B SaaS startup Katana secures investment from Siena Secondary Fund II."
+      },
+      {
+        "title": "Czech cloud startup E2B raises $11.5M in seed funding from ...",
+        "link": "https://en.ain.ua/2024/10/18/e2b-raises-11m-in-seed-funding/",
+        "snippet": "Oct 18, 2024 ... Czech cloud infrastructure startup E2B raises $11.5 million in seed funding led by Decibel Partners, joined by Kaya VC and Sunflower Capital\u00a0..."
+      },
+      {
+        "title": "Tomas Valenta - e2b.dev | LinkedIn",
+        "link": "https://www.linkedin.com/in/valentatomas",
+        "snippet": "Experience: e2b.dev \u00b7 Education: Masaryk University Brno \u00b7 Location: San Francisco Bay Area \u00b7 500+ connections on LinkedIn. View Tomas Valenta's profile on\u00a0..."
+      }
+    ]
+  }
+}
+
+Content Analysis
+----------------
+{
+  "basic_info": {
+    "title": "Open-source Code Interpreting for AI Apps \u2014 E2B",
+    "meta_description": "Add code interpreting in your AI apps and AI agents."
+  },
+  "content_analysis": {
+    "word_count": 2291,
+    "indicator_mentions": {
+      "hiring": 3,
+      "product": 14,
+      "technology": 6,
+      "customers": 16
+    }
+  },
+  "startup_signals": {
+    "team_page_exists": true,
+    "blog_exists": true,
+    "contact_info": {
+      "emails": [
+        "your@email.com"
+      ],
+      "social_links": [
+        "https://github.com/e2b-dev",
+        "https://www.linkedin.com/company/e2b-dev/",
+        "https://github.com/e2b-dev/desktop",
+        "https://github.com/e2b-dev/ai-analyst",
+        "https://github.com/e2b-dev/ai-analyst",
+        "https://github.com/e2b-dev/fragments",
+        "https://github.com/e2b-dev/secure-computer-use",
+        "https://github.com/e2b-dev/desktop",
+        "https://github.com/e2b-dev",
+        "https://github.com/e2b-dev",
+        "https://github.com/e2b-dev/e2b-cookbook",
+        "https://github.com/e2b-dev",
+        "https://www.linkedin.com/company/e2b-dev/"
+      ]
+    }
+  }
+}
+

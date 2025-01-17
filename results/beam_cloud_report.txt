@@ -1,0 +1,94 @@
+Startup Analysis Report
+=====================
+
+Company: beam_cloud
+===================
+
+Technical Analysis
+------------------
+{
+  "repository_metrics": {
+    "stars": null,
+    "forks": null,
+    "open_issues": null,
+    "watchers": null,
+    "last_update": null,
+    "created_at": null
+  },
+  "development_activity": {
+    "recent_commits": 0,
+    "total_contributors": null,
+    "primary_language": null,
+    "all_languages": null
+  },
+  "community_health": {
+    "has_wiki": null,
+    "has_pages": null,
+    "has_projects": null,
+    "description": null
+  },
+  "changelog": {
+    "found": false,
+    "message": "No changelog section found"
+  }
+}
+
+Market Analysis
+---------------
+{
+  "news_analysis": [],
+  "funding_data": {},
+  "market_presence": {
+    "recent_mentions": [
+      {
+        "title": "Beam: AI Infrastructure for Developers | Y Combinator",
+        "link": "https://www.ycombinator.com/companies/beam",
+        "snippet": "Startup SchoolNewsletterFor InvestorsHacker NewsBookface. Open main menu ... News \u00b7 https://beam.cloud. AI Infrastructure for Developers. Run AI workloads\u00a0"
+      },
+      {
+        "title": "Beamery Talent Lifecycle Management",
+        "link": "https://beamery.com/",
+        "snippet": "Talent Acquisition. Talent Acquisition. Hire for potential. Easily identify ... Beamery Completes Workday Certified Integration For Workday Skills Cloud."
+      },
+      {
+        "title": "Exabeam | Cybersecurity & Compliance with Security Log ...",
+        "link": "https://www.exabeam.com/",
+        "snippet": "Experience the world's most advanced cloud-native security operations platform, powered by AI to deliver superior threat detection, investigation,\u00a0..."
+      },
+      {
+        "title": "Bessemer Venture Partners: Home",
+        "link": "https://www.bvp.com/",
+        "snippet": "We partner with audacious entrepreneurs building enduring businesses. Explore Atlas. Read our investment roadmaps, benchmarks, and insights on how to build a\u00a0..."
+      },
+      {
+        "title": "Former Stripe engineer raises $4M for Beam, a fintech startup out to ...",
+        "link": "https://techcrunch.com/2023/03/23/former-stripe-engineer-raises-4m-for-beam-a-fintech-startup-out-to-help-contractors-get-paid-faster/",
+        "snippet": "Mar 23, 2023 ... ... seed funding round led by Accel. Both the startup's founder and lead investor previously spent years working at payments giant Stripe."
+      }
+    ]
+  },
+  "content": {
+    "basic_info": {
+      "title": "AI Infrastructure for Developers",
+      "meta_description": null
+    },
+    "content_analysis": {
+      "word_count": 12,
+      "indicator_mentions": {
+        "hiring": 0,
+        "product": 0,
+        "technology": 0,
+        "customers": 0
+      }
+    },
+    "startup_signals": {
+      "team_page_exists": false,
+      "blog_exists": false,
+      "contact_info": {
+        "emails": [],
+        "social_links": []
+      }
+    }
+  }
+}
+

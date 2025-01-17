@@ -1,0 +1,72 @@
+{
+  "beam_ai": {
+    "technical": {
+      "changelog": {
+        "found": true,
+        "url": "https://beam.ai/./resources/changelog",
+        "entries": [],
+        "update_frequency": 0,
+        "last_update": null
+      }
+    },
+    "market": {
+      "news_analysis": [],
+      "funding_data": {},
+      "market_presence": {
+        "recent_mentions": [
+          {
+            "title": "AI-powered data security and privacy automation startup LightBeam ...",
+            "link": "https://siliconangle.com/2024/02/01/ai-powered-data-security-privacy-automation-startup-lightbeam-ai-raises-17-8m/",
+            "snippet": "Feb 1, 2024 ... LightBeam.ai Inc. today announced that it has raised $17.8 million in new funding to expand its go-to-market initiatives and continue investing in its platform."
+          },
+          {
+            "title": "21 generative AI startups to watch, according to investors | Sifted",
+            "link": "https://sifted.eu/articles/21-generative-ai-startups-to-watch-according-to-investors",
+            "snippet": "Aug 14, 2023 ... VCs from Fly Ventures, Amadeus Capital Partners, Lightspeed Venture Partners, Speedinvest, Earlybird and Connect Ventures share their picks."
+          },
+          {
+            "title": "Beam AI",
+            "link": "https://beam.ai/",
+            "snippet": "Autonomous AI Agents to automate processes. Used by Fortune 500 and startups, our AI agent platform helps organiztions to build and deploy agents in\u00a0..."
+          },
+          {
+            "title": "Beamery Talent Lifecycle Management",
+            "link": "https://beamery.com/",
+            "snippet": "The AI-powered platform for better results across the talent lifecycle. Hire quality candidates, faster; develop the skills of your workforce, and increase\u00a0..."
+          },
+          {
+            "title": "\t Alex Stephany - Founder & CEO - we're hiring! - Beam | LinkedIn",
+            "link": "https://uk.linkedin.com/in/alexstephany",
+            "snippet": "... funding from Index Ventures, and closed the largest equity crowdfunding for a startup in history. I'm now CEO of Beam (www.beam.org), bringing AI to welfare\u00a0..."
+          }
+        ]
+      }
+    },
+    "content": {
+      "basic_info": {
+        "title": "Leading Platform for Agentic Automation & AI Agents",
+        "meta_description": "Autonomous AI Agents to automate processes. Used by Fortune 500 and startups, our AI agent platform helps organiztions to build and deploy agents in minutes."
+      },
+      "content_analysis": {
+        "word_count": 1573,
+        "indicator_mentions": {
+          "hiring": 6,
+          "product": 22,
+          "technology": 16,
+          "customers": 32
+        }
+      },
+      "startup_signals": {
+        "team_page_exists": true,
+        "blog_exists": true,
+        "contact_info": {
+          "emails": [],
+          "social_links": [
+            "https://www.linkedin.com/company/beam-ai",
+            "https://twitter.com/join__beam"
+          ]
+        }
+      }
+    }
+  }
+}
