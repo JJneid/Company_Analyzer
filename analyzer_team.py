@@ -16,6 +16,10 @@ import json
 import re
 from urllib.parse import quote_plus
 import time as time
+from typing import Dict, Optional
+import requests
+import os
+from urllib.parse import urlparse
 
 # Load environment variables
 load_dotenv()
@@ -35,43 +39,110 @@ class RateLimiter:
 
 rate_limiter = RateLimiter()
 
-# Tool Implementations
+from typing import Dict, List, Union
+import requests
+import os
+from urllib.parse import urlparse
+
+from typing import Dict, Optional
+import requests
+import os
+from urllib.parse import urlparse
+
+def get_api_data(url: str, headers: Dict) -> Optional[Dict]:
+    """Safely get and parse API data"""
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        if response.status_code == 200:
+            return response.json()
+        return None
+    except:
+        return None
+
 def github_analysis(repo_url: str) -> Dict:
     """
     Analyze GitHub repository metrics with enhanced startup-focused metrics.
     Returns None if repository is private or not accessible.
+    Handles both repository and organization URLs.
     """
-    if not repo_url:  # Handle cases where no GitHub URL is provided
+    if not repo_url:
         return None
-    try:
-        # Extract owner and repo name from URL
-        parts = repo_url.split('/')
-        owner = parts[-2]
-        repo = parts[-1]
         
+    try:
         headers = {'Authorization': f'token {os.getenv("GITHUB_TOKEN")}'}
         
-        # Get repository data
-        api_url = f'https://api.github.com/repos/{owner}/{repo}'
-        response = requests.get(api_url, headers=headers)
-        data = response.json()
+        # Clean and parse the URL
+        repo_url = repo_url.rstrip('/')
+        parsed = urlparse(repo_url)
+        parts = [p for p in parsed.path.split('/') if p]
         
-        # Get commit frequency
-        commits_url = f'https://api.github.com/repos/{owner}/{repo}/stats/participation'
-        commits_response = requests.get(commits_url, headers=headers)
-        commit_data = commits_response.json()
+        data = None
+        commit_data = None
+        contributor_data = None
         
-        # Get contributor statistics
-        contributors_url = f'https://api.github.com/repos/{owner}/{repo}/contributors'
-        contributors_response = requests.get(contributors_url, headers=headers)
-        contributor_data = contributors_response.json()
+        # Handle different URL types
+        if len(parts) == 1:  # Organization URL
+            org_name = parts[0]
+            
+            # Get org's repositories
+            repos_url = f'https://api.github.com/users/{org_name}/repos'
+            repos_data = get_api_data(repos_url, headers)
+            
+            if not repos_data or not isinstance(repos_data, list):
+                repos_url = f'https://api.github.com/orgs/{org_name}/repos'
+                repos_data = get_api_data(repos_url, headers)
+            
+            if repos_data and isinstance(repos_data, list):
+                # Sort by activity (stars + forks + watchers)
+                repos_data.sort(
+                    key=lambda x: (
+                        x.get('stargazers_count', 0) + 
+                        x.get('forks_count', 0) + 
+                        x.get('watchers_count', 0)
+                    ), 
+                    reverse=True
+                )
+                
+                if repos_data:
+                    # Get most active repo's full data
+                    most_active = repos_data[0]
+                    owner = most_active.get('owner', {}).get('login', org_name)
+                    repo = most_active.get('name')
+                    data = most_active
+                    
+                    # Get additional data for the most active repo
+                    api_url = f'https://api.github.com/repos/{owner}/{repo}'
+                    commits_url = f'{api_url}/stats/participation'
+                    contributors_url = f'{api_url}/contributors'
+                    
+                    data = get_api_data(api_url, headers) or data
+                    commit_data = get_api_data(commits_url, headers)
+                    contributor_data = get_api_data(contributors_url, headers)
+                
+        else:  # Repository URL
+            owner = parts[-2]
+            repo = parts[-1]
+            
+            # Get repository data
+            api_url = f'https://api.github.com/repos/{owner}/{repo}'
+            commits_url = f'{api_url}/stats/participation'
+            contributors_url = f'{api_url}/contributors'
+            
+            data = get_api_data(api_url, headers)
+            commit_data = get_api_data(commits_url, headers)
+            contributor_data = get_api_data(contributors_url, headers)
         
+        # If no valid data was found, return error
+        if not data:
+            return {'error': 'Repository or organization not found or not accessible'}
+            
+        # Return in original format
         return {
             'repository_metrics': {
-                'stars': data.get('stargazers_count'),
-                'forks': data.get('forks_count'),
-                'open_issues': data.get('open_issues_count'),
-                'watchers': data.get('subscribers_count'),
+                'stars': data.get('stargazers_count', 0),
+                'forks': data.get('forks_count', 0),
+                'open_issues': data.get('open_issues_count', 0),
+                'watchers': data.get('subscribers_count', 0),
                 'last_update': data.get('updated_at'),
                 'created_at': data.get('created_at')
             },
@@ -82,12 +153,13 @@ def github_analysis(repo_url: str) -> Dict:
                 'all_languages': data.get('languages_url')
             },
             'community_health': {
-                'has_wiki': data.get('has_wiki'),
-                'has_pages': data.get('has_pages'),
-                'has_projects': data.get('has_projects'),
+                'has_wiki': data.get('has_wiki', False),
+                'has_pages': data.get('has_pages', False),
+                'has_projects': data.get('has_projects', False),
                 'description': data.get('description')
             }
         }
+        
     except Exception as e:
         return {'error': str(e)}
 
